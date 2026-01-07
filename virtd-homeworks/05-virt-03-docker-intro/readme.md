@@ -1,7 +1,7 @@
 ### Задача 1
 https://hub.docker.com/repository/docker/tahkux/custom-nginx/general
 ### Задача 2
-В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+<img width="1804" height="434" alt="image" src="https://github.com/user-attachments/assets/e383b121-f350-48e6-8b7b-04368b06d155" />
 ### Задача 3
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 ### Задача 4
