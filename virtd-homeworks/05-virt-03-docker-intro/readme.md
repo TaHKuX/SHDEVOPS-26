@@ -2,6 +2,7 @@
 https://hub.docker.com/repository/docker/tahkux/custom-nginx/general
 ### Задача 2
 <img width="1802" height="465" alt="image" src="https://github.com/user-attachments/assets/0207840f-ce61-4a7a-96d9-af84ce6fe007" />
+
 ### Задача 3
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 ### Задача 4
