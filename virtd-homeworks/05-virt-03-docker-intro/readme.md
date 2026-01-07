@@ -1,5 +1,5 @@
 ### Задача 1
-Предоставьте ответ в виде ссылки на https://hub.docker.com/<username_repo>/custom-nginx/general .
+https://hub.docker.com/repository/docker/tahkux/custom-nginx/general
 ### Задача 2
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 ### Задача 3
