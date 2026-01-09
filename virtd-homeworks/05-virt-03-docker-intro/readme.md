@@ -17,13 +17,3 @@ https://hub.docker.com/repository/docker/tahkux/custom-nginx/general
 <img width="955" height="1270" alt="image" src="https://github.com/user-attachments/assets/b6d52280-71ab-42af-adb2-196845865992" />
 
 [compose.yaml](compose.yaml)
-
-include:
-  - docker-compose.yaml
-version: "3"
-services:
-  portainer:
-    network_mode: host
-    image: portainer/portainer-ce:latest
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
