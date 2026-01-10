@@ -11,6 +11,7 @@
 <img width="959" height="863" alt="image" src="https://github.com/user-attachments/assets/91f7154f-2ee8-4410-9595-52572e43ce88" />
 
 ### Задача 4
+<img width="2211" height="261" alt="image" src="https://github.com/user-attachments/assets/553260e3-dcd2-4714-ac67-499723c484ac" />
 <img width="959" height="931" alt="image" src="https://github.com/user-attachments/assets/e52eccbb-362a-42a7-ae53-fc42a5cdafaa" />
 https://github.com/TaHKuX/shvirtd-example-python
 
