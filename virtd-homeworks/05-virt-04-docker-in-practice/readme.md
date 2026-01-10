@@ -4,7 +4,7 @@
 ### Задача 1
 <img width="1441" height="612" alt="image" src="https://github.com/user-attachments/assets/9d7973ba-d4ac-4544-aa6a-a83d82cce974" />
 
-### Задача 2
+### Задача 2 (*)
 <img width="593" height="176" alt="image" src="https://github.com/user-attachments/assets/d3de1120-4a2e-4859-ac66-5a0c9a131efa" />
 
 ### Задача 3
@@ -15,8 +15,12 @@
 <img width="959" height="931" alt="image" src="https://github.com/user-attachments/assets/e52eccbb-362a-42a7-ae53-fc42a5cdafaa" />
 https://github.com/TaHKuX/shvirtd-example-python
 
-### Задача 5
+### Задача 5 (*)
 
 ### Задача 6
 
-### Задача 7
+### Задача 6.1
+
+### Задача 6.2 (**)
+
+### Задача 7 (***)
