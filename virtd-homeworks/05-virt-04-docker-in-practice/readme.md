@@ -18,8 +18,10 @@ https://github.com/TaHKuX/shvirtd-example-python
 ### Задача 5 (*)
 
 ### Задача 6
+<img width="1457" height="1109" alt="image" src="https://github.com/user-attachments/assets/262d1b58-7b09-41b5-a38c-cd295c442a16" />
 
 ### Задача 6.1
+<img width="1326" height="353" alt="image" src="https://github.com/user-attachments/assets/e7e79951-a88b-404c-a729-542250831920" />
 
 ### Задача 6.2 (**)
 
