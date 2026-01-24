@@ -33,11 +33,11 @@ variable "vpc_name" {
 
 ###ssh vars
 
-variable "vms_ssh_root_key" {
-  type        = string
-  default     = ""
-  description = "ssh-keygen -t ed25519"
-}
+# variable "vms_ssh_root_key" {
+#   type        = string
+#   default     = ""
+#   description = "ssh-keygen -t ed25519"
+# }
 
 variable "name_1" {
   type        = string
