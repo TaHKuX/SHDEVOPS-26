@@ -1,5 +1,5 @@
 ### Задание 1
-4. Невозможные значения для resource `"yandex_compute_instance" "platform"`:\
+4. Невозможные значения для `resource "yandex_compute_instance" "platform"`:\
 `platform_id   = "standart-v4" -> "standart-v3"`\
 `cores         = 1             -> 2`\
 `core_fraction = 5             -> 20`
