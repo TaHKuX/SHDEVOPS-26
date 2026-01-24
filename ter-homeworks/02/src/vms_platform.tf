@@ -44,7 +44,7 @@ variable "vm_web_nat" {
 #   type = map(any)
 #   default = {
 #     serial-port-enable = 1
-#     ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGjdamlYcDVZJgZ8id/XWqm5WXCUulFHkIemA+szcXIq ronam@TaHKuX"
+#     ssh-keys           = ""
 #   }
 # }
 
@@ -94,7 +94,7 @@ variable "vm_db_nat" {
 #   type = map(any)
 #   default = {
 #     serial-port-enable = 1
-#     ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGjdamlYcDVZJgZ8id/XWqm5WXCUulFHkIemA+szcXIq ronam@TaHKuX"
+#     ssh-keys           = ""
 #   }
 # }
 
@@ -122,6 +122,6 @@ variable "vm_metadata" {
   type = map(any)
   default = {
     serial-port-enable = 1
-    ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGjdamlYcDVZJgZ8id/XWqm5WXCUulFHkIemA+szcXIq ronam@TaHKuX"
+    ssh-keys           = ""
   }
 }
