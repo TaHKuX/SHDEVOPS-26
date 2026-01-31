@@ -1,8 +1,8 @@
 ### Задание 1
 1. Изучил
 2. Иницилизировал
-<img width="747" height="557" alt="image" src="https://github.com/user-attachments/assets/9ccd504a-8512-4186-9765-aa0cea95dd69" />
-<img width="665" height="502" alt="image" src="https://github.com/user-attachments/assets/78af42fd-8a70-4a4a-a5f2-0aa8ecd3746c" />
+<img width="672" height="505" alt="image" src="https://github.com/user-attachments/assets/a7612cc0-3cbf-4d95-8877-3cfe10242da6" />
+<img width="739" height="558" alt="image" src="https://github.com/user-attachments/assets/36b60cf0-c24c-4eb0-9717-be6d424260a0" />
 
 ### Задание 2
 1.
