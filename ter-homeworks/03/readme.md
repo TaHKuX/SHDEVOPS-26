@@ -1,15 +1,15 @@
 ### Задание 1
 1. Изучил
-2. Иницилизировал
+2. Инициализировал
 <img width="672" height="505" alt="image" src="https://github.com/user-attachments/assets/a7612cc0-3cbf-4d95-8877-3cfe10242da6" />
 <img width="739" height="558" alt="image" src="https://github.com/user-attachments/assets/36b60cf0-c24c-4eb0-9717-be6d424260a0" />
 
 ### Задание 2
 1. Создал, описал и назначил
-2.
-4.
-5.
-6.
+2. Создал и описал
+4. Настроил
+5. Использовал
+6. Инициализировал и выполнил
 ### Задание 3
 1.
 2.
