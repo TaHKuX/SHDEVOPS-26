@@ -100,11 +100,6 @@ variable "vm_serial_port" {
   description = "serial-port-enable"
 }
 
-variable "vm_ssh_key" {
-  type        = string
-  description = "ssh-keygen -t ed25519"
-}
-
 variable "vm_ubuntu" {
   type = string
   default = "ubuntu-2004-lts"
