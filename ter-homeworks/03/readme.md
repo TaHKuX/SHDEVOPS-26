@@ -5,7 +5,7 @@
 <img width="739" height="558" alt="image" src="https://github.com/user-attachments/assets/36b60cf0-c24c-4eb0-9717-be6d424260a0" />
 
 ### Задание 2
-1.
+1. Создал, описал и назначил
 2.
 4.
 5.
