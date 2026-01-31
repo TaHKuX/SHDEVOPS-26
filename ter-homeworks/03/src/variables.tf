@@ -33,53 +33,79 @@ variable "vpc_name" {
 
 
 
-# variable "vm_plarform_id" {
-#   type = string
-#   default = "standard-v3"
-# }
+variable "vm_platform_id" {
+  type = string
+  default = "standard-v3"
+}
 
-# variable "vm_resources" {
-#   type = map(object({
-#     cores         = number
-#     memory        = number
-#     core_fraction = number
-#   }))
-#   default = {
-#     web = {
-#       cores         = 2
-#       memory        = 1
-#       core_fraction = 20
-#     }
-#     db = {
-#       cores         = 2
-#       memory        = 2
-#       core_fraction = 20
-#     }
-#   }
-# }
+variable "vm_resources" {
+  type = map(object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  }))
+  default = {
+    web = {
+      cores         = 2
+      memory        = 1
+      core_fraction = 20
+    }
+    main = {
+      cores         = 2
+      memory        = 2
+      core_fraction = 20
+    }
+    replica = {
+      cores         = 2
+      memory        = 1
+      core_fraction = 20
+    }
+  }
+}
 
-# variable "vm_preemptible" {
-#   type = bool
-#   default = true
-# }
+variable "vm_disk" {
+type = map(object({
+    type     = string
+    size     = number
+  }))
+  default = {
+    web = {
+      type    = "network-hdd"
+      size    = 10
+    }
+    main = {
+      type    = "network-hdd"
+      size    = 11
+    }
+    replica = {
+      type    = "network-hdd"
+      size    = 10
+    }
+  }
+}
 
-# variable "vm_nat" {
-#   type = bool
-#   default = true
-# }
+variable "vm_preemptible" {
+  type = bool
+  default = true
+}
 
-# variable "vm_serial_port" {
-#   type        = number
-#   default     = 1
-#   description = "serial-port-enable"
-# }
+variable "vm_nat" {
+  type = bool
+  default = true
+}
 
-# variable "vm_ssh_key" {
-#   type        = string
-#   description = "ssh-keygen -t ed25519"
-# }
+variable "vm_serial_port" {
+  type        = number
+  default     = 1
+  description = "serial-port-enable"
+}
 
-# variable "vm_ubuntu" {
-#   type = string
-#   default = "ubuntu-2004-lts"
-# }
+variable "vm_ssh_key" {
+  type        = string
+  description = "ssh-keygen -t ed25519"
+}
+
+variable "vm_ubuntu" {
+  type = string
+  default = "ubuntu-2004-lts"
+}
