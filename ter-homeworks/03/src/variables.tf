@@ -109,3 +109,7 @@ variable "vm_ubuntu" {
   type = string
   default = "ubuntu-2004-lts"
 }
+
+locals {
+  vm_ssh_key = file("~/.ssh/id_ed25519.pub")
+}

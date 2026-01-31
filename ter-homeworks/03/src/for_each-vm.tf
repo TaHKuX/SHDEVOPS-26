@@ -24,6 +24,6 @@ resource "yandex_compute_instance" "db" {
     }
     metadata = {
         serial-port-enable = var.vm_serial_port
-        ssh-keys           = var.vm_ssh_key
+        ssh-keys           = local.vm_ssh_key
     }
 }
