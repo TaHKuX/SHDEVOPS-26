@@ -1,0 +1,14 @@
+[web]
+%{ for vm, config in web ~}
+${vm} ansible_host=${config.external_ip} fqdn=${config.fqdn}
+%{ endfor ~}
+
+[db]
+%{ for vm, config in db ~}
+${vm} ansible_host=${config.external_ip} fqdn=${config.fqdn}
+%{ endfor ~}
+
+[storage]
+%{ for vm, config in storage ~}
+${vm} ansible_host=${config.external_ip} fqdn=${config.fqdn}
+%{ endfor ~}
