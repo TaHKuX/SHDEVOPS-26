@@ -1,6 +1,9 @@
 ### Задание 1
-1.
-2.
+1. Изучил
+2. Иницилизировал
+<img width="747" height="557" alt="image" src="https://github.com/user-attachments/assets/9ccd504a-8512-4186-9765-aa0cea95dd69" />
+<img width="665" height="502" alt="image" src="https://github.com/user-attachments/assets/78af42fd-8a70-4a4a-a5f2-0aa8ecd3746c" />
+
 ### Задание 2
 1.
 2.
