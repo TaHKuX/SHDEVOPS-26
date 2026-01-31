@@ -1,19 +1,16 @@
 ###cloud vars
 variable "token" {
   type        = string
-  # default     = "y0__xDp8arcAxjB3RMg2eXk9xUw8qHVsAhEscv6Q96Io3ygvR_27dNc3-gljA"
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
 }
 
 variable "cloud_id" {
   type        = string
-  # default     = "b1grtf2ep0fktgq5ohag"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
 }
 
 variable "folder_id" {
   type        = string
-  # default     = "b1g43km07u2h7cdiscsm"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
@@ -33,3 +30,56 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+
+
+
+# variable "vm_plarform_id" {
+#   type = string
+#   default = "standard-v3"
+# }
+
+# variable "vm_resources" {
+#   type = map(object({
+#     cores         = number
+#     memory        = number
+#     core_fraction = number
+#   }))
+#   default = {
+#     web = {
+#       cores         = 2
+#       memory        = 1
+#       core_fraction = 20
+#     }
+#     db = {
+#       cores         = 2
+#       memory        = 2
+#       core_fraction = 20
+#     }
+#   }
+# }
+
+# variable "vm_preemptible" {
+#   type = bool
+#   default = true
+# }
+
+# variable "vm_nat" {
+#   type = bool
+#   default = true
+# }
+
+# variable "vm_serial_port" {
+#   type        = number
+#   default     = 1
+#   description = "serial-port-enable"
+# }
+
+# variable "vm_ssh_key" {
+#   type        = string
+#   description = "ssh-keygen -t ed25519"
+# }
+
+# variable "vm_ubuntu" {
+#   type = string
+#   default = "ubuntu-2004-lts"
+# }
