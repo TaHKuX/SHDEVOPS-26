@@ -5,7 +5,7 @@
         ansible_connection: docker
   deb:
     hosts:
-      ubuntu:
+      ubuntu7:
         ansible_connection: docker
   local:
     hosts:
