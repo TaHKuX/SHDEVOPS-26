@@ -11,3 +11,7 @@
     hosts:
       ronam:
         ansible_connection: local
+  fedora:
+    hosts:
+      fedora7:
+        ansible_connection: docker
