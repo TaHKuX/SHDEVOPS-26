@@ -8,17 +8,17 @@
         name: clickhouse-server
         state: restarted
   tasks:
-    - block:
-        - name: Get clickhouse distrib
-          ansible.builtin.get_url:
-            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
-            dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
-          with_items: "{{ clickhouse_packages }}"
-      rescue:
-        - name: Get clickhouse distrib
-          ansible.builtin.get_url:
-            url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
-            dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
+    - name: Determine architecture for common-static
+      ansible.builtin.set_fact:
+        clickhouse_arch: "{{ 'aarch64' if ansible_architecture == 'aarch64' else 'x86_64' }}"
+    - name: Get clickhouse distrib
+      ansible.builtin.get_url:
+        url: >-
+          https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.{{
+          'noarch' if item != 'clickhouse-common-static' else clickhouse_arch }}.rpm
+        dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
+        mode: '0644'
+      loop: "{{ clickhouse_packages }}"
     - name: Install clickhouse packages
       become: true
       ansible.builtin.yum:
@@ -28,9 +28,84 @@
           - clickhouse-server-{{ clickhouse_version }}.rpm
       notify: Start clickhouse service
     - name: Flush handlers
-      meta: flush_handlers
+      ansible.builtin.meta: flush_handlers
     - name: Create database
       ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
       register: create_db
-      failed_when: create_db.rc != 0 and create_db.rc !=82
+      failed_when: create_db.rc != 0 and create_db.rc != 82
       changed_when: create_db.rc == 0
+
+- name: Install Vector
+  hosts: vector
+  become: true
+  vars:
+    vector_version: "0.34.0"
+    vector_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'x86_64' }}"
+    vector_tarball: "vector-{{ vector_version }}-{{ vector_arch }}-unknown-linux-gnu.tar.gz"
+    vector_url: "https://packages.timber.io/vector/{{ vector_version }}/{{ vector_tarball }}"
+    vector_install_dir: "/opt/vector"
+  handlers:
+    - name: Restart vector
+      ansible.builtin.systemd:
+        name: vector
+        state: restarted
+        daemon_reload: true
+  tasks:
+    - name: Create temporary directory for download
+      ansible.builtin.file:
+        path: /tmp/vector
+        state: directory
+        mode: '0755'
+
+    - name: Download vector tarball
+      ansible.builtin.get_url:
+        url: "{{ vector_url }}"
+        dest: "/tmp/vector/{{ vector_tarball }}"
+        mode: '0644'
+
+    - name: Create installation directory
+      ansible.builtin.file:
+        path: "{{ vector_install_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Extract vector archive
+      ansible.builtin.unarchive:
+        src: "/tmp/vector/{{ vector_tarball }}"
+        dest: "{{ vector_install_dir }}"
+        remote_src: true
+        extra_opts:
+          - --strip-components=2
+        creates: "{{ vector_install_dir }}/bin/vector"
+
+    - name: Link vector binary to /usr/local/bin
+      ansible.builtin.file:
+        src: "{{ vector_install_dir }}/bin/vector"
+        dest: /usr/local/bin/vector
+        state: link
+
+    - name: Create vector config directory
+      ansible.builtin.file:
+        path: /etc/vector
+        state: directory
+        mode: '0755'
+
+    - name: Deploy vector config from template
+      ansible.builtin.template:
+        src: vector.toml.j2
+        dest: /etc/vector/vector.toml
+        mode: '0644'
+      notify: Restart vector
+
+    - name: Create systemd service unit from template
+      ansible.builtin.template:
+        src: vector.service.j2
+        dest: /etc/systemd/system/vector.service
+        mode: '0644'
+      notify: Restart vector
+
+    - name: Enable and start vector service
+      ansible.builtin.systemd:
+        name: vector
+        state: started
+        enabled: true
