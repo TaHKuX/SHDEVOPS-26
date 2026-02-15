@@ -109,3 +109,54 @@
         name: vector
         state: started
         enabled: true
+
+- name: Установка Lighthouse
+  hosts: lighthouse
+  become: true
+  handlers:
+    - name: Перезагрузка nginx
+      ansible.builtin.systemd:
+        name: nginx
+        state: restarted
+        enabled: true
+  tasks:
+    - name: Установка EPEL репозитория
+      ansible.builtin.yum:
+        name: epel-release
+        state: present
+      when: ansible_os_family == "RedHat"
+    - name: Установка nginx
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+      when: ansible_os_family == "RedHat"
+      notify: Restart nginx
+    - name: Запуск nginx
+      ansible.builtin.systemd:
+        name: nginx
+        state: started
+        enabled: true
+    - name: Создание Lighthouse директории
+      ansible.builtin.file:
+        path: "{{ lighthouse_dir }}"
+        state: directory
+        mode: '0755'
+    - name: Загрузка Lighthouse архива
+      ansible.builtin.get_url:
+        url: "{{ lighthouse_url }}"
+        dest: "/tmp/lighthouse-{{ lighthouse_version }}.tar.gz"
+        mode: '0644'
+    - name: Выгрузка Lighthouse из архива
+      ansible.builtin.unarchive:
+        src: "/tmp/lighthouse-{{ lighthouse_version }}.tar.gz"
+        dest: "{{ lighthouse_dir }}"
+        remote_src: true
+        extra_opts: [--strip-components=1]
+        creates: "{{lighthouse_dir }}/index.html"
+    - name: Установка конфика nginx для Lighthouse
+      ansible.builtin.template:
+        src: lighthouse.conf.j2
+        dest: "{{ nginx_conf_dir }}/lighthouse.conf"
+        mode: '0644'
+      notify: Restart nginx
+      

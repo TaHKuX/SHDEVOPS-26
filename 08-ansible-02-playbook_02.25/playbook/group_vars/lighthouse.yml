@@ -1,0 +1,5 @@
+---
+lighthouse_version: "22.3.3.44"
+lighthouse_url: "https://github.com/ClickHouse/ClickHouse/releases/download/v{{ lighthouse_version }}/lighthouse.tar.gz"
+lighthouse_dir: "/var/www/lighthouse"
+nginx_conf_dir: "/etc/nginx/conf.d"
