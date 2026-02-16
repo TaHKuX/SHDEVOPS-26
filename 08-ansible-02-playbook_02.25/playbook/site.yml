@@ -101,6 +101,7 @@
         name: vector
         state: started
         enabled: true
+
 - name: Установка Lighthouse
   hosts: lighthouse
   become: true
