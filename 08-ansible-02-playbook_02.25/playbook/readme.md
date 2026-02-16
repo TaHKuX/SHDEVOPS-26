@@ -1,5 +1,5 @@
 ### Playbook, который устанавлиает ClickHouse, Vector и Lighthouse (+Nginx)
-Всем привет, вашему вниманию предоставляется Playbook который устанавливает ClickHouse, Vector и Lighthouse (+Nginx)
+Всем привет, вашему вниманию предоставляется Playbook, который устанавливает ClickHouse, Vector и Lighthouse (+Nginx)
 1. Первым делом скачайте себе данный каталог со всеми файлами
 2. Зайдите в `inventory/prod.yml` и укажите адреса ваших хостов
 3. Зайдите в `group_vars` и при необходимости измените переменные
