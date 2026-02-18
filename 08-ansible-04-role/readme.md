@@ -13,6 +13,6 @@
 8. Выложил, проставил и добавил
 9. Переработал
 10. Выложил
-11. https://github.com/TaHKuX/SHVIRTD-26/tree/main/08-ansible-02-playbook_02.25/playbook
-    https://github.com/TaHKuX/vector-role
+11. https://github.com/TaHKuX/SHVIRTD-26/tree/main/08-ansible-02-playbook_02.25/playbook\
+    https://github.com/TaHKuX/vector-role\
     https://github.com/TaHKuX/lighthouse-role
