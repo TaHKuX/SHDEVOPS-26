@@ -1,0 +1,8 @@
+[sources.internal_metrics]
+type = "internal_metrics"
+scrape_interval_secs = 5
+
+[sinks.console]
+inputs = ["internal_metrics"]
+type = "console"
+encoding.codec = "json"

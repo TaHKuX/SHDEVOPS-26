@@ -1,0 +1,65 @@
+---
+- name: Установка EPEL репозитория
+  ansible.builtin.yum:
+    name: epel-release
+    state: present
+  when: ansible_os_family == "RedHat"
+- name: Установка nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: present
+  when: ansible_os_family == "RedHat"
+  notify: Перезагрузка nginx
+- name: Запуск nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: started
+    enabled: true
+- name: Создание Lighthouse директории
+  ansible.builtin.file:
+    path: "{{ lighthouse_dir }}"
+    state: directory
+    mode: '0755'
+- name: Установка git
+  ansible.builtin.yum:
+    name: git
+    state: present
+  when: ansible_os_family == "RedHat"
+- name: Клонирование репозитория Lighthouse
+  ansible.builtin.git:
+    repo: https://github.com/VKCOM/lighthouse.git
+    dest: "{{ lighthouse_dir }}"
+    version: master
+    force: yes
+- name: Установка пакетов для управления SELinux
+  ansible.builtin.yum:
+    name:
+      - policycoreutils-python
+    state: present
+  when:
+    - ansible_os_family == "RedHat"
+    - ansible_selinux and ansible_selinux.status == 'enabled'
+- name: Настройка контекста SELinux для директории Lighthouse
+  ansible.builtin.command:
+    cmd: semanage fcontext -a -t httpd_sys_content_t "/var/www/lighthouse(/.*)?"
+  register: semanage_result
+  changed_when: "'File context already defined' not in semanage_result.stderr"
+  failed_when:
+    - semanage_result.rc != 0
+    - "'already defined' not in semanage_result.stderr"
+  when:
+    - ansible_selinux and ansible_selinux.status == 'enabled'
+    - lighthouse_dir is defined
+- name: Применение контекста SELinux
+  ansible.builtin.command:
+    cmd: restorecon -Rv /var/www/lighthouse
+  when:
+    - ansible_selinux and ansible_selinux.status == 'enabled'
+    - lighthouse_dir is defined
+  changed_when: false    
+- name: Установка конфика nginx для Lighthouse
+  ansible.builtin.template:
+    src: lighthouse.conf.j2
+    dest: "{{ nginx_conf_dir }}/lighthouse.conf"
+    mode: '0644'
+  notify: Перезагрузка nginx

@@ -1,0 +1,51 @@
+---
+- name: Create temporary directory for download
+  ansible.builtin.file:
+    path: /tmp/vector
+    state: directory
+    mode: '0755'
+- name: Download vector tarball
+  ansible.builtin.get_url:
+    url: "{{ vector_url }}"
+    dest: "/tmp/vector/{{ vector_tarball }}"
+    mode: '0644'
+- name: Create installation directory
+  ansible.builtin.file:
+    path: "{{ vector_install_dir }}"
+    state: directory
+    mode: '0755'
+- name: Extract vector archive
+  ansible.builtin.unarchive:
+    src: "/tmp/vector/{{ vector_tarball }}"
+    dest: "{{ vector_install_dir }}"
+    remote_src: true
+    extra_opts:
+      - --strip-components=2
+    creates: "{{ vector_install_dir }}/bin/vector"
+- name: Link vector binary to /usr/local/bin
+  ansible.builtin.file:
+    src: "{{ vector_install_dir }}/bin/vector"
+    dest: /usr/local/bin/vector
+    state: link
+- name: Create vector config directory
+  ansible.builtin.file:
+    path: /etc/vector
+    state: directory
+    mode: '0755'
+- name: Deploy vector config from template
+  ansible.builtin.template:
+    src: vector.toml.j2
+    dest: /etc/vector/vector.toml
+    mode: '0644'
+  notify: Restart vector
+- name: Create systemd service unit from template
+  ansible.builtin.template:
+    src: vector.service.j2
+    dest: /etc/systemd/system/vector.service
+    mode: '0644'
+  notify: Restart vector
+- name: Enable and start vector service
+  ansible.builtin.systemd:
+    name: vector
+    state: started
+    enabled: true

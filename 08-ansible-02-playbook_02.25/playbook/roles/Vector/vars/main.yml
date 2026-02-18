@@ -1,0 +1,5 @@
+---
+vector_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'x86_64' }}"
+vector_tarball: "vector-{{ vector_version }}-{{ vector_arch }}-unknown-linux-gnu.tar.gz"
+vector_url: "https://packages.timber.io/vector/{{ vector_version }}/{{ vector_tarball }}"
+vector_install_dir: "/opt/vector"
