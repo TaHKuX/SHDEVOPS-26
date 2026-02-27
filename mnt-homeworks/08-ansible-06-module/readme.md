@@ -7,7 +7,7 @@
 6. Установил
 7. Запустил
 8. Вышел
-9. `. venv/bin/activate && . hacking/env-setup.`
+9. `. venv/bin/activate && . hacking/env-setup`
 ### Основная часть
 1. 1
 2. 2
