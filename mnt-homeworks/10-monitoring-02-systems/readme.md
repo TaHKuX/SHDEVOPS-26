@@ -24,7 +24,9 @@
    Zabbix - push и pull  
    VictoriaMetrics - push и pull  
    Nagios - pull
-7. 
+7.
+<img width="2559" height="1223" alt="image" src="https://github.com/user-attachments/assets/3cec5a2a-6a97-4c2c-b1d6-175b8fa60203" />
+
 8. 
 9. 
 ### Дополнительное задание (со звездочкой*) - необязательно к выполнению
