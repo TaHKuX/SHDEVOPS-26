@@ -28,6 +28,8 @@
 <img width="2559" height="1223" alt="image" src="https://github.com/user-attachments/assets/3cec5a2a-6a97-4c2c-b1d6-175b8fa60203" />
 
 8. 
+<img width="2484" height="674" alt="image" src="https://github.com/user-attachments/assets/7da463c3-5e4c-4a40-98e1-65726281cc90" />
+
 9. 
 ### Дополнительное задание (со звездочкой*) - необязательно к выполнению
 1. 
