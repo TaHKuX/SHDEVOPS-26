@@ -30,7 +30,9 @@
 8. 
 <img width="2484" height="674" alt="image" src="https://github.com/user-attachments/assets/7da463c3-5e4c-4a40-98e1-65726281cc90" />
 
-9. 
+9. Актуально ли задание? Настройки и так уже присутствовали, а в веб-интерфейсе у меня уже есть 5 папок с метриками Docker, или должны будут появиться новые?
+<img width="2481" height="921" alt="image" src="https://github.com/user-attachments/assets/a4d96795-f854-4bb7-928e-e185f5019138" />
+
 ### Дополнительное задание (со звездочкой*) - необязательно к выполнению
 1. 
 2. 
