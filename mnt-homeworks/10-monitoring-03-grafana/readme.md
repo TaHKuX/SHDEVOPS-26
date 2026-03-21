@@ -3,7 +3,8 @@
 1. Использовал и запустил
 2. Зашёл
 3. Подключил
-4. 
+4.
+<img width="1235" height="423" alt="image" src="https://github.com/user-attachments/assets/7c04db16-245e-494b-9319-eab0b89ce1c9" />
 
 ### Задание 2
 
