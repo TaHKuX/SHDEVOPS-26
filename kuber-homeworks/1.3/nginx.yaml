@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+      initContainers:
+      - name: busybox
+        image: busybox:1.28
+        command: ['sh', '-c', "until nslookup service; do echo waiting for service; sleep 2; done"]
