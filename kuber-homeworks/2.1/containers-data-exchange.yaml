@@ -16,7 +16,7 @@ spec:
       - name: busybox-write
         image: busybox
         command: ["/bin/sh", "-c"] 
-        args: ["echo $(date) > /busybox-write/data.txt; sleep 3600"]
+        args: ["while true; do echo $(date) >> /busybox-write/data.txt; sleep 5; done"]
         volumeMounts:
         - name: vol
           mountPath: /busybox-write
