@@ -2,9 +2,9 @@
 1. Создал [containers-data-exchange.yaml](https://github.com/TaHKuX/SHVIRTD-26/blob/main/kuber-homeworks/2.1/containers-data-exchange.yaml)
 2. Настроил
 3. Обеспечил
-<img width="1073" height="1252" alt="image" src="https://github.com/user-attachments/assets/5ba8db0b-883a-4fb1-a00e-d533d9f0d7d7" />
-<img width="1137" height="802" alt="image" src="https://github.com/user-attachments/assets/bf47a49f-9652-48c3-864f-44eb7deaa2f7" />
-<img width="1122" height="66" alt="image" src="https://github.com/user-attachments/assets/3f24ed4e-3c05-4e08-adfa-d8eb3bad8438" />
+<img width="1070" height="1234" alt="image" src="https://github.com/user-attachments/assets/075c5eb8-c481-48b6-b86f-ff4bd0d3eacb" />
+<img width="1142" height="777" alt="image" src="https://github.com/user-attachments/assets/643f0b8f-e739-450d-b984-e2c6f60b7c4a" />
+<img width="1124" height="286" alt="image" src="https://github.com/user-attachments/assets/f96f9815-cd94-4040-bd8d-aa0d077e96ef" />
 
 ### Задание 2. PV, PVC
 ### Задача
