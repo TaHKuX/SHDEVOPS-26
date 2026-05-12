@@ -19,17 +19,7 @@
 <img width="735" height="1188" alt="image" src="https://github.com/user-attachments/assets/3e93c9cc-b71f-4c9a-9773-69c8aef37e09" />
 
 ### Задание 3. StorageClass
-### Задача
-Создать Deployment приложения, использующего PVC, созданный на основе StorageClass.
-
-### Шаги выполнения
-
-1. Создать Deployment приложения, состоящего из контейнеров busybox и multitool, использующего созданный ранее PVC.
-2. Создать SC и PVC для подключения папки на локальной ноде, которая будет использована в поде.
-3. Продемонстрировать, что контейнер multitool может читать данные из файла в смонтированной директории, в который busybox записывает данные каждые 5 секунд.
-
-### Что сдать на проверку
-- Манифесты:
-  - `sc.yaml`
-- Скриншоты:
-  - каждый шаг выполнения задания, начиная с шага 2
+1. Создал в [sc.yaml](https://github.com/TaHKuX/SHVIRTD-26/blob/main/kuber-homeworks/2.1/sc.yaml)
+2. Создал в [sc.yaml](https://github.com/TaHKuX/SHVIRTD-26/blob/main/kuber-homeworks/2.1/sc.yaml)
+3. Демонстрирую
+<img width="1144" height="592" alt="image" src="https://github.com/user-attachments/assets/7a1bfb8f-0a31-428a-ac19-4fa7c38a1e0d" />
