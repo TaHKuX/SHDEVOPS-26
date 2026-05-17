@@ -1,15 +1,8 @@
 ### Задание 1: Работа с ConfigMaps
-1. Создать Deployment с двумя контейнерами
-nginx
-multitool
-2. Подключить веб-страницу через ConfigMap
-3. Проверить доступность
-
-Что сдать на проверку
-Манифесты:
-deployment.yaml
-configmap-web.yaml
-Скриншот вывода curl или браузера
+1. Создал [deployment.yaml](https://github.com/TaHKuX/SHVIRTD-26/blob/main/kuber-homeworks/2.3/deployment.yaml)
+2. Подключил в [configmap-web.yaml](https://github.com/TaHKuX/SHVIRTD-26/blob/main/kuber-homeworks/2.3/configmap-web.yaml)
+3. Проверил
+<img width="945" height="467" alt="image" src="https://github.com/user-attachments/assets/beffa38e-cc2d-4c4c-9e44-183b5f862477" />
 
 ### Задание 2: Настройка HTTPS с Secrets
 1. Сгенерировать SSL-сертификат
