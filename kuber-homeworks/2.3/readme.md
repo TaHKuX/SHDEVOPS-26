@@ -5,18 +5,11 @@
 <img width="945" height="467" alt="image" src="https://github.com/user-attachments/assets/beffa38e-cc2d-4c4c-9e44-183b5f862477" />
 
 ### Задание 2: Настройка HTTPS с Secrets
-1. Сгенерировать SSL-сертификат
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-  -keyout tls.key -out tls.crt -subj "/CN=myapp.example.com"
-2. Создать Secret
-3. Настроить Ingress
-4. Проверить HTTPS-доступ
-
-Что сдать на проверку
-Манифесты:
-secret-tls.yaml
-ingress-tls.yaml
-Скриншот вывода curl -k
+1. Сгенерировал
+2. Создал [secret-tls.yaml](https://github.com/TaHKuX/SHVIRTD-26/blob/main/kuber-homeworks/2.3/secret-tls.yaml)
+3. Настроил в [ingress-tls.yaml](https://github.com/TaHKuX/SHVIRTD-26/blob/main/kuber-homeworks/2.3/ingress-tls.yaml)
+4. Проверил
+<img width="708" height="219" alt="image" src="https://github.com/user-attachments/assets/82651278-4009-4109-a81d-e8f2a73d7753" />
 
 ### Задание 3: Настройка RBAC
 1. Включите RBAC в microk8s
