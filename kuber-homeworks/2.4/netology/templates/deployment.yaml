@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name}}-{{ .Values.deployment.name }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.labels.app }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.labels.app }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.image.container1 }}
+        image: {{ .Values.deployment.image.container1 }}:{{ .Values.deployment.image.container1tag }}
+      - name: {{ .Values.deployment.image.container2name }}
+        image: {{ .Values.deployment.image.container2 }}
+        env:
+        - name: HTTP_PORT
+          value: "8081"

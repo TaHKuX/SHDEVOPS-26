@@ -1,0 +1,17 @@
+deployment:
+  name: net-dep
+  image: 
+    container1: nginx
+    container1tag: "1.25.0"
+    container2: wbitt/network-multitool
+    container2name: multitool
+  replicas: 3
+service:
+  name: net-svc
+  ports:
+    port1: 80
+    targetPort1: 80
+    port2: 8081
+    targetPort2: 8081
+labels:
+  app: net
