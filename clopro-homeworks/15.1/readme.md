@@ -1,3 +1,5 @@
+[network.tf](https://github.com/TaHKuX/SHDEVOPS-26/blob/main/clopro-homeworks/15.1/network.tf) и [providers.tf](https://github.com/TaHKuX/SHDEVOPS-26/blob/main/clopro-homeworks/15.1/providers.tf)
+
 1. Создал пустую VPC и выбрал зону `a`
 2. Публичная подсеть
 - Создал в VPC subnet с названием public
