@@ -8,7 +8,7 @@
 <img width="679" height="990" alt="image" src="https://github.com/user-attachments/assets/ce05afc0-a85f-48ab-98b6-ac4647523bda" />
 
 3. Приватная подсеть
-- Создал в VPC subnet с названием private, сетью 192.168.20.0/24.
+- Создал в VPC subnet с названием private
 - Создать route table
 - Создал в этой приватной подсети виртуалку с внутренним IP, подключился к ней через виртуалку, созданную ранее, и убедился, что есть доступ к интернету
 <img width="657" height="967" alt="image" src="https://github.com/user-attachments/assets/860ca4b6-4939-4865-8d3c-6c4886568351" />
