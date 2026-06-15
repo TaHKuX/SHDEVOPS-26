@@ -100,5 +100,5 @@ EOF
 
 output "lamp_group_instances_ips" {
   value       = [for instance in yandex_compute_instance_group.lamp_group.instances : instance.network_interface.0.nat_ip_address]
-  description = "Публичные IP-адреса ВМ"
+  description = "IP адреса ВМ"
   }

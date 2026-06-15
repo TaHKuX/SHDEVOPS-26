@@ -33,5 +33,5 @@ output "load_balancer_public_ip" {
       for spec in listener.external_address_spec : spec.address
     ]
   ]
-  description = "IP-адрес балансировщика"
+  description = "IP адрес балансировщика"
 }
